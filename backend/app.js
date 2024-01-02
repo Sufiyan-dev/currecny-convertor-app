@@ -5,6 +5,7 @@ import cryptoRoute from './src/api/routes/crypto.route.js'
 import fiatRoute from './src/api/routes/fiat.route.js'
 import priceRoute from './src/api/routes/price.route.js'
 import invalidRoute from './src/api/routes/invalid.route.js'
+import cors from 'cors'
 
 dotenv.config();
 
@@ -12,6 +13,8 @@ const app = express();
 
 // req input phraser
 app.use(express.json());
+
+app.use(cors());
 
 app.use(cryptoRoute);
 app.use(fiatRoute);
